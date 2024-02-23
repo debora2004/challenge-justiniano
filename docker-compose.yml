@@ -1,0 +1,26 @@
+version: "3.9"
+
+services:
+  web:
+    container_name: web
+    image: node
+    restart: always
+    build: .
+    ports:
+      - 8080:8080
+    links:
+      - mongo
+    volumes:
+      - .:/usr/src/app
+    environment:
+      - MONGODB_URI=mongodb://mongo/restaurant
+      - PORT=8080
+      - NODE_ENV=development
+    depends_on:
+      - mongo
+    command: /bin/sh -c 'npm install && npm install body-parser && npm install --global nodemon && npm install multer && npm run dev'
+  mongo:
+    container_name: database
+    image: mongo:latest
+    ports:
+      - "27017:27017"

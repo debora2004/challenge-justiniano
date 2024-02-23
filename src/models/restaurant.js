@@ -19,7 +19,7 @@ const RestaurantSchema = new mongoose.Schema({
     photo: {
     type: String,
     required: true,
-    },
+    }
 });
 
 const Restaurant = mongoose.model('Restaurant', RestaurantSchema);

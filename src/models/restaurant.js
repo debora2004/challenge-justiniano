@@ -1,9 +1,5 @@
 const mongoose = require("mongoose");
 const RestaurantSchema = new mongoose.Schema({
-    id: {
-    type: Number,
-    autoincrement: true,
-    },
     name: {
     type: String,
     required: true,
@@ -13,7 +9,7 @@ const RestaurantSchema = new mongoose.Schema({
     required: true,
     },
     operating_hours: {
-    type: Date,
+    type: String,
     required: true,
     },
     photo: {

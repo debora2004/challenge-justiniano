@@ -21,18 +21,6 @@ const registerRestaurant = async (req, res) => {
     }
 };
 
-const deleteRestaurant = async (req, res) => {
-    try {
-      const { id } = req.params;
-      console.log("ID!! "+ id)
-      const deletedRestaurant = await restaurantService.deleteRestaurant(id);
-      res.status(200).json(deletedRestaurant);
-    } catch (error) {
-      console.error('Driver error when deleting restaurant:', error);
-      res.status(500).json({ mensaje: 'Driver error when deleting restaurant' });
-    }
-};
-
 const updateRestaurant = async (req, res) => {
     try {
         const id = req.params.id;
@@ -50,9 +38,9 @@ const updateRestaurant = async (req, res) => {
     }
 };
 
-const listAllRestaurant = async (res) => {
+const listAllRestaurants = async (req, res) => {
     try {
-      const allRestaurants = await restaurantService.listAllRestaurant();
+      const allRestaurants = await restaurantService.listAllRestaurants();
       res.status(200).json(allRestaurants);
     } catch (error) {
       console.error('Controller error when listing all restaurants:', error);
@@ -67,16 +55,29 @@ const findByIdRestaurant = async (req, res) => {
       const restaurant = await restaurantService.findByIdRestaurant(id);
 
       res.status(200).json(restaurant);
-    } catch (error) {
+    }
+    catch (error) {
       console.error('Controller error when searching by id:', error);
       res.status(500).json({ mensaje: 'Controller error when searching by id:' });
     }
+};
+
+const deleteRestaurant = async (req, res) => {
+  try {
+    const { id } = req.params;
+    console.log("ID!! "+ id)
+    const deletedRestaurant = await restaurantService.deleteRestaurant(id);
+    res.status(200).json(deletedRestaurant);
+  } catch (error) {
+    console.error('Driver error when deleting restaurant:', error);
+    res.status(500).json({ mensaje: 'Driver error when deleting restaurant' });
+  }
 };
 
 module.exports = {
     registerRestaurant,
     updateRestaurant,
     findByIdRestaurant,
-    listAllRestaurant,
+    listAllRestaurants,
     deleteRestaurant
 };

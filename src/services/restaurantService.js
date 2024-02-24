@@ -8,7 +8,7 @@ const registerRestaurant = async (name, address, operating_hours, photo) => {
         const registerRestaurant = new Restaurant({
             name,
             address,
-            operating_hours: new Date(operating_hours),
+            operating_hours,
             photo: photo.path
         });
         const savedRestaurant = await registerRestaurant.save();
@@ -32,7 +32,7 @@ const updateRestaurant = async (name, address, operating_hours, photo, id) => {
         
         existingRestaurant.name = name;
         existingRestaurant.address = address;
-        existingRestaurant.operating_hours = new Date(operating_hours);
+        existingRestaurant.operating_hours = operating_hours;
         existingRestaurant.photo = photo.path;
 
         const updatedRestaurant = await existingRestaurant.save();
@@ -43,10 +43,10 @@ const updateRestaurant = async (name, address, operating_hours, photo, id) => {
     }
 };
 
-const listAllRestaurant = async (req, res) => {
+const listAllRestaurants = async () => {
     try{
-        const listAllRestaurant = await Restaurant.find();
-        return listAllRestaurant;
+        const allRestaurants = await Restaurant.find();
+        return allRestaurants;
     }catch(err){
         console.error("The server returned an error: "+ err);
         throw err;  
@@ -69,7 +69,7 @@ const findByIdRestaurant = async (id) => {
 const deleteRestaurant = async (id) => {
     try{
         const restaurant = await Restaurant.findByIdAndDelete(id);
-        return "Se ha eliminado correctamente";
+        return "The product was deleted successfully";
     }catch(err){
         console.error("The server returned an error: "+ err);
         throw err;
@@ -79,7 +79,7 @@ const deleteRestaurant = async (id) => {
 module.exports = {
     registerRestaurant,
     updateRestaurant,
-    listAllRestaurant,
+    listAllRestaurants,
     findByIdRestaurant,
     deleteRestaurant
 };

@@ -2,7 +2,7 @@ const mongoose = require('mongoose');
 
 const { MONGODB_URI } = require("./config.js");
 
-mongoose.connect(MONGODB_URI, { useNewUrlParser: true, useUnifiedTopology: true });
+mongoose.connect(MONGODB_URI);
 mongoose.connection.set('bufferCommands', false);
 mongoose.connection.set('socketTimeoutMS', 30000);
 mongoose.connection.on("connected", () => {

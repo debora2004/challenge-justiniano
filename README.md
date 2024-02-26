@@ -5,8 +5,9 @@ Este proyecto se encarga de la gestión de restaurantes y productos del menú.
 
 ## Pre-requisitos
 Para la correcta ejecución de la aplicación es necesario tener instalado:
-* Docker para Windows/Mac: `https://www.docker.com/get-started`
-* Docker para Linux: `https://docs.docker.com/engine/install/`
+* Docker
+  * Windows/Mac: `https://www.docker.com/get-started`
+  * Linux: `https://docs.docker.com/engine/install/`
 * Postman: `https://postman.com/downloads/`
 
 ## Instalacion
@@ -26,7 +27,6 @@ git clone https://github.com/debora2004/challenge-justiniano.git
 
 ## Uso
 1. Importa el archivo "Restaurant - N1U.postman_collection.json" en Postman.
-2. Selecciona la carpeta "Class Restaurant" y ejecuta el test "Crear Restaurante".
 3. Observa cómo se crea un nuevo restaurante mediante la response de la API.
 4. Repite los pasos 3 y 4 para las demás carpetas y tests.
    
@@ -54,12 +54,12 @@ Para usar las variables en las pruebas, se debe usar la sintaxis {{variable}}. P
 
 ## API
 ### Endpoints Restaurant:
-1. POST http://localhost:8080/restaurant : Se encarga de registrar un restaurante. Desde la solapa body seleccionar el formato "form-data" se requiere ingresar:
+1. POST http://localhost:8080/restaurant : Se encarga de registrar un restaurante. Desde la solapa body seleccionar el formato "form-data". Se requiere ingresar:
     * name 
     * address
     * operating_hours
     * photo (png o jpg)
-2. PUT  http://localhost:8080/restaurant/{{id_restaurant}} : Se encarga de actualizar un restaurante. Desde la solapa body seleccionar el formato "form-data" se requiere ingresar:
+2. PUT  http://localhost:8080/restaurant/{{id_restaurant}} : Se encarga de actualizar un restaurante. Desde la solapa body seleccionar el formato "form-data". Se requiere ingresar:
     * name 
     * address
     * operating_hours
@@ -69,7 +69,7 @@ Para usar las variables en las pruebas, se debe usar la sintaxis {{variable}}. P
 5. DELETE http://localhost:8080/restaurant/{{id_restaurant}} : Se encarga de eliminar un restaurante por id.
 
 ### Endopoints Product:
-1. POST http://localhost:8080/product/{{id_restautant}} : Se encarga de registrar un producto asociado a un restaurante. Desde la solapa body seleccionar el formato "form-data" se requiere ingresar:
+1. POST http://localhost:8080/product/{{id_restautant}} : Se encarga de registrar un producto asociado a un restaurante. Desde la solapa body seleccionar el formato "form-data". Se requiere ingresar:
     * name
     * price
     * category
@@ -78,7 +78,7 @@ Para usar las variables en las pruebas, se debe usar la sintaxis {{variable}}. P
     * day_offer
     * offer_schedule
     * photo (png o jpg)
-2. PUT http://localhost:8080/product/{{id_product}} : Se encarga de actualizar un producto. Desde la solapa body seleccionar el formato "form-data" se requiere ingresar:
+2. PUT http://localhost:8080/product/{{id_product}} : Se encarga de actualizar un producto. Desde la solapa body seleccionar el formato "form-data". Se requiere ingresar:
     * name
     * price
     * category

@@ -1,0 +1,418 @@
+{
+	"info": {
+		"_postman_id": "d336399e-407c-45a2-8bfc-39a9556ce95f",
+		"name": "Restaurant - N1U",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "23526300",
+		"_collection_link": "https://www.postman.com/grey-astronaut-912220/workspace/team-workspace/collection/23526300-d336399e-407c-45a2-8bfc-39a9556ce95f?action=share&source=collection_link&creator=23526300"
+	},
+	"item": [
+		{
+			"name": "Class Restaurant",
+			"item": [
+				{
+					"name": "Crear Restaurante",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"let id = jsonData._id;",
+									"pm.globals.set(\"id_restaurant\", id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "Content-Type",
+								"value": "multipart/form-data",
+								"type": "text",
+								"disabled": true
+							}
+						],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "burger",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "cosme beccar 351",
+									"type": "text"
+								},
+								{
+									"key": "operating_hours",
+									"value": "10:00 hs - 4:00hs",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/abigailjustiniano/Desktop/images fulbo/pelota.png"
+								},
+								{
+									"key": "Content-Type",
+									"value": "multipart/form-data",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/restaurant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Restaurante",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/{{id_restaurant}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"{{id_restaurant}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Modificar Restaurante",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "burger",
+									"type": "text"
+								},
+								{
+									"key": "address",
+									"value": "suipacha 280",
+									"type": "text"
+								},
+								{
+									"key": "operating_hours",
+									"value": "2024-02-22T11:09:00Z",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": []
+								},
+								{
+									"key": "Content-Type",
+									"value": "multipart/form-data",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/restaurant/{{id_restaurant}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"{{id_restaurant}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar Restaurantes",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Restaurante por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/restaurant/{{id_restaurant}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"restaurant",
+								"{{id_restaurant}}"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Class Product",
+			"item": [
+				{
+					"name": "Crear Producto",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"let jsonData = pm.response.json();",
+									"let id = jsonData._id;",
+									"pm.globals.set(\"id_product\", id);",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "name",
+									"value": "Patitas de pollo",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "$300",
+									"type": "text"
+								},
+								{
+									"key": "category",
+									"value": "entrada",
+									"type": "text"
+								},
+								{
+									"key": "special_offer",
+									"value": "2 x 1",
+									"type": "text"
+								},
+								{
+									"key": "price_offer",
+									"value": "$400",
+									"type": "text"
+								},
+								{
+									"key": "day_offer",
+									"value": "lunes a jueves",
+									"type": "text"
+								},
+								{
+									"key": "offer_schedule",
+									"value": "4:00 - 6:00",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/abigailjustiniano/Desktop/images fulbo/pelota.png"
+								},
+								{
+									"key": "",
+									"value": "",
+									"type": "text",
+									"disabled": true
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/product/{{id_restaurant}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"{{id_restaurant}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Buscar Producto por Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/{{id_product}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"{{id_product}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Actualizar Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "formdata",
+							"formdata": [
+								{
+									"key": "category",
+									"value": "vegetariano",
+									"type": "text"
+								},
+								{
+									"key": "special_offer",
+									"value": "0",
+									"type": "text"
+								},
+								{
+									"key": "price_offer",
+									"value": "$600",
+									"type": "text"
+								},
+								{
+									"key": "day_offer",
+									"value": "lunes a miercoles",
+									"type": "text"
+								},
+								{
+									"key": "offer_schedule",
+									"value": "10:00 - 00:00",
+									"type": "text"
+								},
+								{
+									"key": "photo",
+									"type": "file",
+									"src": "/Users/abigailjustiniano/Desktop/images fulbo/pelota.png"
+								},
+								{
+									"key": "restaurantId",
+									"value": "65d8f215a83c34b97994fec6",
+									"type": "text"
+								},
+								{
+									"key": "name",
+									"value": "salchichas",
+									"type": "text"
+								},
+								{
+									"key": "price",
+									"value": "44",
+									"type": "text"
+								}
+							]
+						},
+						"url": {
+							"raw": "http://localhost:8080/product/{{id_product}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"{{id_product}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Eliminar Productos",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product/{{id_product}}",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product",
+								"{{id_product}}"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Listar productos",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/product",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"product"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}

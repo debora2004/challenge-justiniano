@@ -27,6 +27,7 @@ git clone https://github.com/debora2004/challenge-justiniano.git
 
 ## Uso
 1. Importa el archivo "Restaurant - N1U.postman_collection.json" en Postman.
+2. Selecciona la carpeta "Class Restaurant" y ejecuta la llamada de la API: "Crear Restaurante".
 3. Observa cómo se crea un nuevo restaurante mediante la response de la API.
 4. Repite los pasos 3 y 4 para las demás carpetas y tests.
    

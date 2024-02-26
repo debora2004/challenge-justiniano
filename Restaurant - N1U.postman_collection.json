@@ -60,7 +60,7 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/Users/abigailjustiniano/Desktop/images fulbo/pelota.png"
+									"src": []
 								},
 								{
 									"key": "Content-Type",
@@ -258,7 +258,7 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/Users/abigailjustiniano/Desktop/images fulbo/pelota.png"
+									"src": []
 								},
 								{
 									"key": "",
@@ -339,7 +339,7 @@
 								{
 									"key": "photo",
 									"type": "file",
-									"src": "/Users/abigailjustiniano/Desktop/images fulbo/pelota.png"
+									"src": []
 								},
 								{
 									"key": "restaurantId",
